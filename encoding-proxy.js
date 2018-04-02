@@ -5,7 +5,7 @@
  * Used to workaround default nodejs http encoding to utf-8 (e.g. in Mountebank).
  *
  * Arguments:
- *   --url=https://localhost:3000
+ *   --target=https://localhost:3000
  *   --port=3001
  *   --insecure=false
  *   --encoding=
@@ -37,8 +37,8 @@ process.argv.forEach(arg => {
 if (!args.port) {
   args.port = 3001;
 }
-if (!args.url) {
-  args.url = 'http://localhost:3000';
+if (!args.target) {
+  args.target = 'http://localhost:3000';
 }
 if (!args.encoding === 'null') {
   args.encoding = null; // nodejs http default encoding = utf8
@@ -71,9 +71,9 @@ http
         'content-length': undefined,
         'Content-Length': undefined
       };
-      const origin = args.url.replace(/\/$/, '');
+      const target = args.target.replace(/\/$/, '');
       const path = req.url;
-      const url = origin + path;
+      const url = target + path;
       const requestOptions = {
         method: req.method,
         url,
@@ -98,4 +98,4 @@ http
   })
   .listen(args.port);
 
-console.log(`encoding-proxy - ${args.encoding} - listening on port ${args.port} proxying to ${args.url}`);
+console.log(`encoding-proxy - ${args.encoding} - listening on port ${args.port} proxying to ${args.target}`);

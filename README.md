@@ -16,12 +16,12 @@ npm install git+https://git@github.com/mrac/encoding-proxy.git
 #### To run:
 
 ```
-node encoding-proxy.js --url=http://localhost:8000 --port=8001 --insecure=true --encoding=binary
+node encoding-proxy.js --target=http://localhost:8000 --port=8001 --insecure=true --encoding=binary
 ```
 
 ### Arguments (with default values):
 
- * `--url=https://localhost:3000`
+ * `--target=https://localhost:3000`
  * `--port=3001`
  * `--insecure=false`
  * `--encoding=`
