@@ -1,7 +1,7 @@
 {
   "name": "encoding-proxy",
   "version": "1.0.0",
-  "description": "Encoding Proxy",
+  "description": "Proxy for converting binary body payload (a buffer) to string with custom encoding. If encoding is not specified, it doesn't convert a buffer to string.",
   "main": "encoding-proxy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/mrac/encoding-proxy/issues"
   },
-  "homepage": "https://github.com/mrac/encoding-proxy#readme"
+  "homepage": "https://github.com/mrac/encoding-proxy#readme",
+  "dependencies": {
+    "request": "^2.85.0"
+  }
 }
