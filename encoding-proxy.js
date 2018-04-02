@@ -41,7 +41,7 @@ if (!args.url) {
   args.url = 'http://localhost:3000';
 }
 if (!args.encoding === 'null') {
-  args.encoding = null;
+  args.encoding = null; // nodejs http default encoding = utf8
 }
 args.insecure = args.insecure === 'true';
 
@@ -71,9 +71,12 @@ http
         'content-length': undefined,
         'Content-Length': undefined
       };
+      const origin = args.url.replace(/\/$/, '');
+      const path = req.url;
+      const url = origin + path;
       const requestOptions = {
-        url: args.url,
         method: req.method,
+        url,
         body,
         headers,
         strictSSL: !args.insecure
@@ -95,4 +98,4 @@ http
   })
   .listen(args.port);
 
-console.log(`encoding-proxy listening on port ${args.port} proxying to ${args.url}`);
+console.log(`encoding-proxy - ${args.encoding} - listening on port ${args.port} proxying to ${args.url}`);
