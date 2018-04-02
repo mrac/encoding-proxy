@@ -5,14 +5,28 @@ If encoding is not specified, it doesn't convert a buffer to string.
 
 Used to workaround default nodejs http encoding to utf-8 (e.g. in Mountebank).
 
-#### Arguments (with default values):
+### Installation
+
+#### To install:
+
+```
+npm install git+https://git@github.com/mrac/encoding-proxy.git
+````
+
+#### To run:
+
+```
+node encoding-proxy.js --url=http://localhost:8000 --port=8001 --insecure=true --encoding=binary
+```
+
+### Arguments (with default values):
 
  * `--url=https://localhost:3000`
  * `--port=3001`
  * `--insecure=false`
  * `--encoding=`
 
-#### Encodings:
+### Encodings:
 
  *  `utf8`
  *  `binary`
@@ -21,5 +35,4 @@ Used to workaround default nodejs http encoding to utf-8 (e.g. in Mountebank).
  *  `ucs2`
  *  `utf16le`
  *  `ascii`
- *
 
