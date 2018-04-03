@@ -4,7 +4,7 @@
   "description": "Proxy for converting binary body payload (a buffer) to string with custom encoding. If encoding is not specified, it doesn't convert a buffer to string.",
   "main": "./src/encoding-proxy.js",
   "bin": {
-    "mb": "./bin/encoding-proxy"
+    "encoding-proxy": "./bin/encoding-proxy"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
