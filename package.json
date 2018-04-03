@@ -2,9 +2,13 @@
   "name": "encoding-proxy",
   "version": "1.0.0",
   "description": "Proxy for converting binary body payload (a buffer) to string with custom encoding. If encoding is not specified, it doesn't convert a buffer to string.",
-  "main": "encoding-proxy.js",
+  "main": "./src/encoding-proxy.js",
+  "bin": {
+    "mb": "./bin/encoding-proxy"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bin/encoding-proxy"
   },
   "repository": {
     "type": "git",
@@ -12,7 +16,8 @@
   },
   "keywords": [
     "encoding",
-    "proxy"
+    "proxy",
+    "server"
   ],
   "author": "Michal Raczkowski",
   "license": "MIT",

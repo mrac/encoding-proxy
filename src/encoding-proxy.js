@@ -19,6 +19,9 @@
  *  utf16le
  *  ascii
  */
+
+'use strict';
+
 var http = require('http');
 var request = require('request');
 
@@ -98,4 +101,4 @@ http
   })
   .listen(args.port);
 
-console.log(`encoding-proxy - ${args.encoding} - listening on port ${args.port} proxying to ${args.target}`);
+console.log(`encoding-proxy - ${args.encoding || 'no encoding'} - listening on port ${args.port} proxying to ${args.target}`);
