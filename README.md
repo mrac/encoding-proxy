@@ -10,7 +10,7 @@ Used to workaround default nodejs http encoding to utf-8 (e.g. in Mountebank).
 #### To install:
 
 ```
-npm install git+https://git@github.com/mrac/encoding-proxy.git
+npm install encoding-proxy
 ````
 
 #### To run:
