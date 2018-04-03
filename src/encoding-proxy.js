@@ -53,7 +53,7 @@ http
   .createServer(function(req, res) {
     let noEncoding = args.encoding === undefined;
     let requestBody = noEncoding ? [] : '';
-    const contentType = req.headers['content-type'] || req.headers['Content-Type'];
+    const contentType = req.headers['content-type'];
 
     if (args.encoding !== undefined) {
       req.setEncoding(args.encoding);
@@ -69,11 +69,10 @@ http
 
     req.on('end', () => {
       const body = noEncoding ? Buffer.concat(requestBody) : requestBody;
-      const headers = {
-        ...req.headers,
-        'content-length': undefined,
-        'Content-Length': undefined
-      };
+      const headers = { ...req.headers };
+      delete headers['content-length'];
+      delete headers['transfer-encoding'];
+
       const target = args.target.replace(/\/$/, '');
       const path = req.url;
       const url = target + path;

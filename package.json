@@ -1,6 +1,6 @@
 {
   "name": "encoding-proxy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Proxy for converting binary body payload (a buffer) to string with custom encoding. If encoding is not specified, it doesn't convert a buffer to string.",
   "main": "./src/encoding-proxy.js",
   "bin": {
