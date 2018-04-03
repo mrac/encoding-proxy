@@ -21,7 +21,7 @@ npm install git+https://git@github.com/mrac/encoding-proxy.git
 
 ### Arguments (with default values):
 
- * `--target=https://localhost:3000`
+ * `--target=http://localhost:3000`
  * `--port=3001`
  * `--insecure=false`
  * `--encoding=`
